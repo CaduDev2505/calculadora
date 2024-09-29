@@ -1,241 +1,38 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-     <title> calculadora</title>
-     <link rel="stylesheet" href="style.css">
-     <style type="text/css">
-     
-       div{
-         width: 260px;
-         height: 400px;
-         background-color: silver;
-         border-radius: 20px;
-         margin: 100px 100px 0 40px;
-         border: solid;
-         border-width: 5px;
-       }
-       
-       body{
-         background-color:white;
-       } 
-       
-       p{
-        margin: 30px 10px 0 10px;
-        padding: 20px 0 0 0;
-        border: solid;
-        width: 240px;
-        height: 70px;
-        background-color: lime;
-        font-size: 30px;
-       }
-       
-       .numeros7ao9mult{
-        margin: 8px 0 0 9px;
-        width: 50px;
-        height: 50px; 
-        background-color: blue;   
-        color: white;  
-       }
-       
-       .numeros4ao6div{
-         margin: 5px 0 0 9px;
-         width: 50px;
-         height: 50px;  
-         background-color: blue;   
-         color: white;  
-       }
-       
-       .numeros1ao3sub{
-         margin: 5px 0 0 9px;
-         width: 50px;
-         height: 50px;  
-         background-color: blue;   
-         color: white;  
-       }
-       
-       .zeroPontoIgualAdicao{
-         margin: 5px 0 0 9px;
-         width: 50px;
-         height: 50px;  
-         background-color: blue;   
-         color: white;  
-       }
-       
-       #limp{
-         margin: 10px 0 0 9px;
-         width: 60px;
-         height: 40px;
-         background-color: red;
-         color: white;
-       } 
-       
-       .expressoes{
-         margin: 5px 0 0 9px;
-         width: 50px;
-         height: 50px;  
-         background-color: skyblue;
-         color: black;
-       }
-                 
-     </style>
-  </head>
-  <body>
-    <div id="corpo">
-      <p></p>
-      <button id="limp" onclick="limp()"> C </button>
-      <br>
-      <button class="numeros7ao9mult" onclick="sete()">7</button>
-      <button class="numeros7ao9mult" onclick="oito()">8</button>
-      <button class="numeros7ao9mult" onclick="nove()">9</button>
-      <button class="expressoes" onclick="mult()"> x </button>
-      <br>
-      <button class="numeros4ao6div" onclick="quatro()">4</button>
-      <button class="numeros4ao6div" onclick="cinco()">5</button>
-      <button class="numeros4ao6div" onclick="seis()">6</button>
-      <button class="expressoes" onclick="div()"> ÷ </button>
-      <br>
-      <button class="numeros1ao3sub" onclick="um()">1</button>
-      <button class="numeros1ao3sub" onclick="dois()">2</button>
-      <button class="numeros1ao3sub" onclick="tres()">3</button>
-      <button class="expressoes" onclick="sub()"> - </button>
-      <br> 
-      <button class="zeroPontoIgualAdicao" onclick="zero()">0</button>
-      <button class="zeroPontoIgualAdicao" onclick="ponto()" >.</button>
-      <button class="expressoes" onclick="equal()">=</button>
-      <button class="expressoes" onclick="adicao()"> + </button>   
-    </div>
 
+<head>
+  <title> calculadora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+  <div id="corpo">
+    <p></p>
+    <button id="limp" onclick="limp()"> C </button>
+    <br>
+    <button class="numeros7ao9mult" onclick="sete()">7</button>
+    <button class="numeros7ao9mult" onclick="oito()">8</button>
+    <button class="numeros7ao9mult" onclick="nove()">9</button>
+    <button class="expressoes" onclick="mult()"> x </button>
+    <br>
+    <button class="numeros4ao6div" onclick="quatro()">4</button>
+    <button class="numeros4ao6div" onclick="cinco()">5</button>
+    <button class="numeros4ao6div" onclick="seis()">6</button>
+    <button class="expressoes" onclick="div()"> ÷ </button>
+    <br>
+    <button class="numeros1ao3sub" onclick="um()">1</button>
+    <button class="numeros1ao3sub" onclick="dois()">2</button>
+    <button class="numeros1ao3sub" onclick="tres()">3</button>
+    <button class="expressoes" onclick="sub()"> - </button>
+    <br>
+    <button class="zeroPontoIgualAdicao" onclick="zero()">0</button>
+    <button class="zeroPontoIgualAdicao" onclick="ponto()">.</button>
+    <button class="expressoes" onclick="equal()">=</button>
+    <button class="expressoes" onclick="adicao()"> + </button>
+  </div>
+  <script src="bottons.js"></script>
+  <script src="expressions.js"></script>
+</body>
 
-
-    <script type="text/javascript">
-    
-      let tela
-      let nunero1
-      let numero2
-      let resultado
-      let expressao
-            
-      function um(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 1;                      
-      }
-      
-      function dois(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 2;                     
-      }
-      
-      function tres(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 3;                     
-      }
-      
-      function quatro(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 4;   
-      } 
-      
-      function cinco(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 5;                      
-      }
-      
-      function seis(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 6;                      
-      }
-      
-      function sete(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 7;                      
-      }
-      
-      function oito(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 8;                     
-      }
-      
-      function nove(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 9;
-      }
-      
-      function zero(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + 0;
-      }
-      
-      function ponto(){
-        tela = document.querySelector("p");
-        tela.innerHTML = tela.innerHTML + ".";
-      }            
-      
-      function adicao(){
-        numero1 = tela.innerHTML;
-        tela.innerHTML = "";
-        expressao = "adicao";                                                                      
-      }
-      
-      function sub(){
-        numero1 = tela.innerHTML;
-        tela.innerHTML = "";
-        expressao = "sub";                                                                      
-      }
-      
-      function mult(){
-        numero1 = tela.innerHTML;
-        tela.innerHTML = "";
-        expressao = "mult";                                                                      
-      }
-      
-      function div(){
-        numero1 = tela.innerHTML;
-        tela.innerHTML = "";
-        expressao = "div";                                                                      
-      }
-      
-      function equal(){
-      
-         numero2 = tela.innerHTML;
-         numero1 = Number(numero1); 
-         numero2 = Number(numero2);
-        
-        if(expressao === "adicao"){ 
-        
-          resultado = numero1 + numero2;
-          tela.innerHTML = resultado;
-          
-        }
-        if(expressao === "sub"){ 
-        
-          resultado = numero1 - numero2;
-          tela.innerHTML = resultado;
-          
-        }
-        if(expressao === "mult"){ 
-        
-          resultado = numero1 * numero2;
-          tela.innerHTML = resultado;
-          
-        }
-        if(expressao === "div"){ 
-        
-          resultado = numero1 / numero2;
-          tela.innerHTML = resultado;
-          
-        }
-                              
-        numero1 = tela.innerHTML;                  
-     }
-     
-      function limp(){
-      
-        tela = document.querySelector("p");
-        tela.innerHTML = "";
-      }    
-                
-    </script>
-    <script href="buttons.js"></script>
-  </body>
 </html>
